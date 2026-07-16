@@ -7,21 +7,14 @@ class Cleverswitch < Formula
   sha256 "e82c3adc5be2cafa8c7cd9c25457561d934bb6b20eea223999dbb9f24e274f05"
   license "GPL-3.0-or-later"
 
-  # macOS-only tap: bleak's BLE notify path relies on the pyobjc/CoreBluetooth stack.
+  depends_on "hidapi"
   depends_on :macos
-  depends_on "hidapi"        # provides libhidapi.dylib for the ctypes binding in transport.py
   depends_on "python@3.13"
-
-  # Runtime resources. Regenerate on a Mac with:
-  #   brew update-python-resources Formula/cleverswitch.rb
   resource "PyYAML" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
-  # Pinned to the newest 2.x: bleak 3.x switched to the uv_build backend, which
-  # Homebrew can't build from source (needs Rust). 2.1.1 uses poetry-core and
-  # still satisfies the app's "bleak >= 0.22" requirement.
   resource "bleak" do
     url "https://files.pythonhosted.org/packages/45/8a/5acbd4da6a5a301fab56ff6d6e9e6b6945e6e4a2d1d213898c21b1d3a19b/bleak-2.1.1.tar.gz"
     sha256 "4600cc5852f2392ce886547e127623f188e689489c5946d422172adf80635cf9"
