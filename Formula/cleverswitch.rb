@@ -19,9 +19,12 @@ class Cleverswitch < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  # Pinned to the newest 2.x: bleak 3.x switched to the uv_build backend, which
+  # Homebrew can't build from source (needs Rust). 2.1.1 uses poetry-core and
+  # still satisfies the app's "bleak >= 0.22" requirement.
   resource "bleak" do
-    url "https://files.pythonhosted.org/packages/16/df/05a3f80ca8e3f7f5b0dba68a9e618147c909ccdba1468f07487dc8d72a9d/bleak-3.0.2.tar.gz"
-    sha256 "c2229cb8238d5876b4bd05c74bf7a1aea1f88da39d2e51ac9dfd5cc319d5265f"
+    url "https://files.pythonhosted.org/packages/45/8a/5acbd4da6a5a301fab56ff6d6e9e6b6945e6e4a2d1d213898c21b1d3a19b/bleak-2.1.1.tar.gz"
+    sha256 "4600cc5852f2392ce886547e127623f188e689489c5946d422172adf80635cf9"
   end
 
   resource "pyobjc-core" do
