@@ -41,6 +41,7 @@ class Cleverswitch < Formula
   end
 
   def install
+    ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CLEVERSWITCH"] = version.to_s
     virtualenv_install_with_resources
   end
 
