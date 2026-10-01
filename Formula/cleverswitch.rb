@@ -3,8 +3,8 @@ class Cleverswitch < Formula
 
   desc "Synchronize Logitech Easy-Switch host switching between keyboard and mouse"
   homepage "https://github.com/MikalaiBarysevich/CleverSwitch"
-  url "https://github.com/MikalaiBarysevich/CleverSwitch/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "3af0a491b8fa6600dafc3e6cd47966418977af6b44046ccf19cd718a882095d5"
+  url "https://github.com/MikalaiBarysevich/CleverSwitch/archive/refs/tags/v1.5.4.tar.gz"
+  sha256 "88a996cc8943bc4d6216841989713b1eaa363bb6950fe863db57520073146fe1"
   license "GPL-3.0-or-later"
 
   depends_on "hidapi"
